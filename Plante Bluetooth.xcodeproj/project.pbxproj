@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298D43A0CF025BEAB0996631 /* libPods-Plante Bluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 324735F14B5BAF7702F26F0C /* libPods-Plante Bluetooth.a */; };
+		7515560C243A1C5C00C3972D /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7515560B243A1C5C00C3972D /* PlantController.swift */; };
 		75965D652437647F002FD2E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D642437647F002FD2E1 /* AppDelegate.swift */; };
 		75965D672437647F002FD2E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D662437647F002FD2E1 /* SceneDelegate.swift */; };
 		75965D692437647F002FD2E1 /* ScanBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D682437647F002FD2E1 /* ScanBluetooth.swift */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		324735F14B5BAF7702F26F0C /* libPods-Plante Bluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Plante Bluetooth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4855752B2E758A515E004BB7 /* Pods-Plante Bluetooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plante Bluetooth.release.xcconfig"; path = "Target Support Files/Pods-Plante Bluetooth/Pods-Plante Bluetooth.release.xcconfig"; sourceTree = "<group>"; };
+		6C6D6122B7D88CA5B981BABA /* Pods-Plante Bluetooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plante Bluetooth.debug.xcconfig"; path = "Target Support Files/Pods-Plante Bluetooth/Pods-Plante Bluetooth.debug.xcconfig"; sourceTree = "<group>"; };
+		7515560B243A1C5C00C3972D /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		75965D612437647F002FD2E1 /* Plante Bluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plante Bluetooth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75965D642437647F002FD2E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75965D662437647F002FD2E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298D43A0CF025BEAB0996631 /* libPods-Plante Bluetooth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27E1D656219EE7C7C11C21A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C6D6122B7D88CA5B981BABA /* Pods-Plante Bluetooth.debug.xcconfig */,
+				4855752B2E758A515E004BB7 /* Pods-Plante Bluetooth.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2C5A23FA435E7D8AE7ECD155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324735F14B5BAF7702F26F0C /* libPods-Plante Bluetooth.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		75965D582437647F002FD2E1 = {
 			isa = PBXGroup;
 			children = (
 				75965D632437647F002FD2E1 /* Plante Bluetooth */,
 				75965D622437647F002FD2E1 /* Products */,
+				27E1D656219EE7C7C11C21A2 /* Pods */,
+				2C5A23FA435E7D8AE7ECD155 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +91,7 @@
 				75965D682437647F002FD2E1 /* ScanBluetooth.swift */,
 				75965D7824376BF6002FD2E1 /* UUIDKeys.swift */,
 				75965D6A2437647F002FD2E1 /* Main.storyboard */,
+				7515560B243A1C5C00C3972D /* PlantController.swift */,
 				75965D7A24376F9D002FD2E1 /* ScanBluetoothCell.swift */,
 				75965D6D24376487002FD2E1 /* Assets.xcassets */,
 				75965D6F24376487002FD2E1 /* LaunchScreen.storyboard */,
@@ -80,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75965D7524376487002FD2E1 /* Build configuration list for PBXNativeTarget "Plante Bluetooth" */;
 			buildPhases = (
+				BCDB0E4B0E76626A4FBA5A4C /* [CP] Check Pods Manifest.lock */,
 				75965D5D2437647F002FD2E1 /* Sources */,
 				75965D5E2437647F002FD2E1 /* Frameworks */,
 				75965D5F2437647F002FD2E1 /* Resources */,
@@ -139,12 +167,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCDB0E4B0E76626A4FBA5A4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plante Bluetooth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75965D5D2437647F002FD2E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				75965D7924376BF6002FD2E1 /* UUIDKeys.swift in Sources */,
+				7515560C243A1C5C00C3972D /* PlantController.swift in Sources */,
 				75965D692437647F002FD2E1 /* ScanBluetooth.swift in Sources */,
 				75965D652437647F002FD2E1 /* AppDelegate.swift in Sources */,
 				75965D672437647F002FD2E1 /* SceneDelegate.swift in Sources */,
@@ -290,6 +344,7 @@
 		};
 		75965D7624376487002FD2E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C6D6122B7D88CA5B981BABA /* Pods-Plante Bluetooth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,12 +357,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tsoriano.Plante-Bluetooth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		75965D7724376487002FD2E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4855752B2E758A515E004BB7 /* Pods-Plante Bluetooth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tsoriano.Plante-Bluetooth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

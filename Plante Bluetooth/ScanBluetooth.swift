@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 import CoreBluetooth
 
+
+
 class ScanBluetooth: UIViewController {
 
     //MARK: - ASSETS
@@ -25,6 +27,9 @@ class ScanBluetooth: UIViewController {
     let timer = Timer()
     var data = NSMutableData()
     var characteristicASCIIValue = NSString()
+    var refreshControl = UIRefreshControl()
+    var cellSelected = Bool()
+    var cellIndexPath = IndexPath()
    
     
     
@@ -36,8 +41,27 @@ class ScanBluetooth: UIViewController {
         ScanTableView.reloadData()
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
+        
         ScanTableView.separatorStyle = .none
         ScanTableView.layer.cornerRadius = 24
+        
+       //Refresh when pull
+        refreshControl.tintColor = UIColor(red: 29.0/255.0, green: 28.0/255.0, blue: 39.0/255.0, alpha: 1)
+       ScanTableView.refreshControl = refreshControl
+       refreshControl.addTarget(self, action: #selector(refreshScan), for: UIControl.Event.valueChanged)
+       ScanTableView.addSubview(refreshControl)
+        
+    }
+    
+    
+
+    
+    @objc func refreshScan(){
+            self.disconnectFromDevice()
+            self.peripherals = []
+            self.RSSIs = []
+            self.startScan()
+            self.ScanTableView.reloadData()
         
     }
     
@@ -45,7 +69,8 @@ class ScanBluetooth: UIViewController {
         print("Now Scanning...")
         timer.invalidate()
         centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
-        Timer.scheduledTimer(timeInterval: 17, target: self, selector: #selector(self.cancelScan), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.cancelScan), userInfo: nil, repeats: false)
+        
         
     }
     
@@ -54,19 +79,44 @@ class ScanBluetooth: UIViewController {
     }
     
     @objc func cancelScan(){
+        self.ScanTableView.reloadData()
+        refreshControl.endRefreshing()
         self.centralManager?.stopScan()
         print("Scan Stopped")
         print("Number of Peripherals Found: \(peripherals.count)")
     }
     
-//    func disconnectFromDevice () {
-//       centralManager?.cancelPeripheralConnection()
-//    }
+    func disconnectFromDevice () {
+        if blePeripheral != nil {
+            centralManager?.cancelPeripheralConnection(blePeripheral)
+            ScanTableView.deselectRow(at: cellIndexPath, animated: true)
+            ScanTableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPlant" {
+            let destinationVC = segue.destination as! PlantController
+            destinationVC.delegate = self
+            
+        }
+    }
 
 
 }
 
-extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITableViewDelegate, UITableViewDataSource {
+extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITableViewDelegate, UITableViewDataSource, cellDelegate,plantControllerDelegate {
+        
+    
+    func dismissPlanteController() {
+        refreshScan()
+    }
+    
+    func cellSelected(cell: ScanBluetoothCell) {
+        cellIndexPath = self.ScanTableView.indexPath(for: cell)!
+        
+    }
+    
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
@@ -104,6 +154,7 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
        //Discovery callback
         blePeripheral.delegate = self
         peripheral.discoverServices(nil)
+        performSegue(withIdentifier: "toPlant", sender: self)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
@@ -131,8 +182,8 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
                     print("\(characteristic.uuid): properties contains .notify")
                     peripheral.setNotifyValue(true, for: characteristic)
                 }
-                
             }
+            
     }
 //
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
@@ -174,9 +225,20 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScanBluetoothCell
-        
+        cell.delegate = self
         cell.layer.cornerRadius = 24
+        cell.rssiNumber.text = "\(RSSIs[indexPath.section])"
         
+        
+        if Int(RSSIs[indexPath.section]) < -70 {
+            cell.rssiState.image = UIImage(named: "Top Connection")
+        } else if Int(RSSIs[indexPath.section]) > -70 && Int(RSSIs[indexPath.section]) < -60 {
+            cell.rssiState.image = UIImage(named: "Top Medium Connection")
+        } else if Int(RSSIs[indexPath.section]) > -60 && Int(RSSIs[indexPath.section]) < -50 {
+            cell.rssiState.image = UIImage(named: "Medium Connection")
+        } else {
+            cell.rssiState.image = UIImage(named: "Bot Connection")
+        }
         
         if peripherals[indexPath.section].name == nil {
             cell.labelCell.text = "Inconnu"
