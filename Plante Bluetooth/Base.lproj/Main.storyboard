@@ -178,14 +178,50 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obK-O7-54c">
                                         <rect key="frame" x="0.0" y="176.5" width="414" height="118"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" name="Bot Plant Screen"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-L0-gHT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="58.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DA-9f-13M">
+                                        <rect key="frame" x="0.0" y="58.5" width="414" height="118"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8e-sc-CP8">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="118"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-MZ-cLs">
+                                                <rect key="frame" x="31" y="44.5" width="77" height="29"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                                <color key="textColor" name="Blue text"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="t8e-sc-CP8" firstAttribute="leading" secondItem="6DA-9f-13M" secondAttribute="leading" id="7eC-ax-vh7"/>
+                                            <constraint firstItem="t8e-sc-CP8" firstAttribute="width" secondItem="6DA-9f-13M" secondAttribute="width" multiplier="0.075" id="Hdl-B7-lsH"/>
+                                            <constraint firstAttribute="bottom" secondItem="t8e-sc-CP8" secondAttribute="bottom" id="LCa-Bd-nqg"/>
+                                            <constraint firstItem="t8e-sc-CP8" firstAttribute="top" secondItem="6DA-9f-13M" secondAttribute="top" id="RzQ-W1-6XQ"/>
+                                            <constraint firstItem="4I6-MZ-cLs" firstAttribute="leading" secondItem="t8e-sc-CP8" secondAttribute="trailing" id="TPP-Xe-uPg"/>
+                                            <constraint firstItem="4I6-MZ-cLs" firstAttribute="centerY" secondItem="6DA-9f-13M" secondAttribute="centerY" id="lKh-lN-ioS"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Bot Plant Screen"/>
                                 <constraints>
+                                    <constraint firstItem="6DA-9f-13M" firstAttribute="leading" secondItem="z1V-dR-jgT" secondAttribute="leading" id="Fpu-3V-RC3"/>
                                     <constraint firstItem="obK-O7-54c" firstAttribute="leading" secondItem="z1V-dR-jgT" secondAttribute="leading" id="Hjq-0N-7b1"/>
                                     <constraint firstAttribute="bottom" secondItem="obK-O7-54c" secondAttribute="bottom" id="JsN-jx-KaS"/>
+                                    <constraint firstAttribute="trailing" secondItem="6DA-9f-13M" secondAttribute="trailing" id="Jva-AG-HjG"/>
+                                    <constraint firstItem="iUL-L0-gHT" firstAttribute="top" secondItem="z1V-dR-jgT" secondAttribute="top" id="NrT-0s-zPy"/>
+                                    <constraint firstItem="iUL-L0-gHT" firstAttribute="leading" secondItem="z1V-dR-jgT" secondAttribute="leading" id="jO4-1G-K2z"/>
+                                    <constraint firstAttribute="trailing" secondItem="iUL-L0-gHT" secondAttribute="trailing" id="lSd-Uf-7gT"/>
+                                    <constraint firstItem="6DA-9f-13M" firstAttribute="top" secondItem="iUL-L0-gHT" secondAttribute="bottom" id="mkN-Fh-nvv"/>
+                                    <constraint firstItem="6DA-9f-13M" firstAttribute="height" secondItem="z1V-dR-jgT" secondAttribute="height" multiplier="0.4" id="mxO-eL-Gfg"/>
                                     <constraint firstItem="obK-O7-54c" firstAttribute="height" secondItem="z1V-dR-jgT" secondAttribute="height" multiplier="0.4" id="p68-hJ-rMH"/>
+                                    <constraint firstItem="iUL-L0-gHT" firstAttribute="height" secondItem="z1V-dR-jgT" secondAttribute="height" multiplier="0.2" id="pAe-XE-Cd1"/>
                                     <constraint firstAttribute="trailing" secondItem="obK-O7-54c" secondAttribute="trailing" id="rqc-8R-1L6"/>
                                 </constraints>
                             </view>
@@ -247,6 +283,7 @@
                     <navigationItem key="navigationItem" id="XGX-j2-zhF"/>
                     <connections>
                         <outlet property="botScreenView" destination="z1V-dR-jgT" id="Uqt-pZ-erb"/>
+                        <outlet property="labelHumidity" destination="4I6-MZ-cLs" id="LHO-dR-MCL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0d-7B-r5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -259,13 +296,19 @@
         <image name="Top Connection" width="22" height="26"/>
         <image name="backArrow" width="28" height="19"/>
         <namedColor name="BG Color Plant Screen">
-            <color red="0.19607843137254902" green="0.62745098039215685" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19599999487400055" green="0.62699997425079346" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BG Color Scan Screen">
             <color red="0.76499998569488525" green="0.9100000262260437" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Blue text">
+            <color red="0.11400000005960464" green="0.10999999940395355" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Bot Plant Screen">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Cell Color Text">
-            <color red="0.19607843137254902" green="0.62745098039215685" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19599999487400055" green="0.62699997425079346" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TableColor">
             <color red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>

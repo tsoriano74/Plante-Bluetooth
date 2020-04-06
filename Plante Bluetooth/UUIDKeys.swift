@@ -8,6 +8,7 @@
 
 import CoreBluetooth
 
+let notificationKey = "humidiy_data"
 let bluetooth_Service_UUID = CBUUID(string: "FFE0")
 let humidity_UUID = CBUUID(string: "FFE1")
 

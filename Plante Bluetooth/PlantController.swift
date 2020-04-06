@@ -16,14 +16,26 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
 
     // MARK: - Properties
     var delegate: plantControllerDelegate?
+    var humiditySet = Int8()
 
     // MARK: - IBOutlets
     @IBOutlet var botScreenView: UIView!
+    @IBOutlet var labelHumidity: UILabel!
     
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            self.isModalInPresentation = true
+        }
+        
+        //Notification
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: notificationKey),
+        object: nil,
+        queue: nil,
+        using:catchNotification)
         
         botScreenView.layer.cornerRadius = 30
         // Do any additional setup after loading the view.
@@ -34,7 +46,11 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
         delegate?.dismissPlanteController()
     }
     
-   
+   func catchNotification(notification:Notification) -> Void {
+     guard let humidity = notification.userInfo!["humidity"] else { return }
+//     humiditySet = (Int8(humidity) / 1000)
+     labelHumidity.text = "\(humidity)% Humide"
+   }
     
     
     // MARK: - IBActions

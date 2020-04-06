@@ -36,20 +36,21 @@ class ScanBluetooth: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Delegate
         ScanTableView.delegate = self
         ScanTableView.dataSource = self
         ScanTableView.reloadData()
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
-        
+        //Design
         ScanTableView.separatorStyle = .none
         ScanTableView.layer.cornerRadius = 24
         
-       //Refresh when pull
+        //Refresh when pull
         refreshControl.tintColor = UIColor(red: 29.0/255.0, green: 28.0/255.0, blue: 39.0/255.0, alpha: 1)
-       ScanTableView.refreshControl = refreshControl
-       refreshControl.addTarget(self, action: #selector(refreshScan), for: UIControl.Event.valueChanged)
-       ScanTableView.addSubview(refreshControl)
+        ScanTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshScan), for: UIControl.Event.valueChanged)
+        ScanTableView.addSubview(refreshControl)
         
     }
     
@@ -92,6 +93,10 @@ class ScanBluetooth: UIViewController {
             ScanTableView.deselectRow(at: cellIndexPath, animated: true)
             ScanTableView.reloadData()
         }
+    }
+    
+    func map(minRange:Int, maxRange:Int, minDomain:Int, maxDomain:Int, value:Int) -> Int {
+        return minDomain + (maxDomain - minDomain) * (value - minRange) / (maxRange - minRange)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -190,8 +195,10 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
         switch characteristic.uuid {
           case humidity_UUID:
             if let ASCIIstring = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue) {
-                characteristicASCIIValue = ASCIIstring
-                print("Value Recieved: \((characteristicASCIIValue as String))")
+                var valueConvertedToInt = (ASCIIstring as NSString).integerValue
+                var convertedToPercent = map(minRange: 500, maxRange: 1016, minDomain: 100, maxDomain: 0, value: valueConvertedToInt)
+                print("Value Recieved: \(convertedToPercent)")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil, userInfo: ["humidity": convertedToPercent])
                 //NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: nil)
                 
             }
@@ -231,13 +238,13 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
         
         
         if Int(RSSIs[indexPath.section]) < -70 {
-            cell.rssiState.image = UIImage(named: "Top Connection")
-        } else if Int(RSSIs[indexPath.section]) > -70 && Int(RSSIs[indexPath.section]) < -60 {
-            cell.rssiState.image = UIImage(named: "Top Medium Connection")
-        } else if Int(RSSIs[indexPath.section]) > -60 && Int(RSSIs[indexPath.section]) < -50 {
-            cell.rssiState.image = UIImage(named: "Medium Connection")
-        } else {
             cell.rssiState.image = UIImage(named: "Bot Connection")
+        } else if Int(RSSIs[indexPath.section]) > -70 && Int(RSSIs[indexPath.section]) < -60 {
+            cell.rssiState.image = UIImage(named: "Medium Connection")
+        } else if Int(RSSIs[indexPath.section]) > -60 && Int(RSSIs[indexPath.section]) < -50 {
+            cell.rssiState.image = UIImage(named: "Top Medium Connection")
+        } else {
+            cell.rssiState.image = UIImage(named: "Top Connection")
         }
         
         if peripherals[indexPath.section].name == nil {
