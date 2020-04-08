@@ -17,10 +17,16 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
     // MARK: - Properties
     var delegate: plantControllerDelegate?
     var humiditySet = Int8()
+    let sizeScreen = UIScreen.main.bounds
 
     // MARK: - IBOutlets
     @IBOutlet var botScreenView: UIView!
     @IBOutlet var labelHumidity: UILabel!
+    @IBOutlet var hauteurTextBubble: NSLayoutConstraint!
+    @IBOutlet var labelBubble: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var bubbleSize: NSLayoutConstraint!
+    @IBOutlet var textBubbleSize: NSLayoutConstraint!
     
 
     // MARK: - Life Cycle
@@ -38,8 +44,29 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
         using:catchNotification)
         
         botScreenView.layer.cornerRadius = 30
-        // Do any additional setup after loading the view.
+        hauteurTextBubble.constant = -(sizeScreen.width * 0.08)
+        bubbleSize.constant = -200
+//        textBubbleSize.constant = -200
+        labelBubble.isHidden = true
+        descriptionLabel.isHidden = true
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [.curveEaseInOut], animations: {
+            self.bubbleSize.constant = 0
+            self.textBubbleSize.constant = 0
+            self.view.layoutIfNeeded()
+        })
+        labelBubble.isHidden = false
+        descriptionLabel.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    
 
     // MARK: - Set Up
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
@@ -47,10 +74,12 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
     }
     
    func catchNotification(notification:Notification) -> Void {
-     guard let humidity = notification.userInfo!["humidity"] else { return }
-//     humiditySet = (Int8(humidity) / 1000)
-     labelHumidity.text = "\(humidity)% Humide"
-   }
+        guard let humidity = notification.userInfo!["humidity"] else { return }
+        guard let feel = notification.userInfo!["feel"] else { return }
+        descriptionLabel.text = "Je suis actuellement à \(humidity)% d'humidité. Il est important que je ne reste pas désséchée..."
+        labelBubble.text = "\(feel)"
+    
+    }
     
     
     // MARK: - IBActions
