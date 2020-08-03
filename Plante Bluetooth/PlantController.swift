@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import UserNotifications
+import CoreBluetooth
+import Lottie
 
 protocol plantControllerDelegate {
     func dismissPlanteController()
 }
 
-class PlantController: UIViewController, UIAdaptivePresentationControllerDelegate {
+class PlantController: UIViewController, UIAdaptivePresentationControllerDelegate, UNUserNotificationCenterDelegate {
 
     // MARK: - Properties
     var delegate: plantControllerDelegate?
     var humiditySet = Int8()
     let sizeScreen = UIScreen.main.bounds
-
+    let center = UNUserNotificationCenter.current()
+    var boolSwitchNotif: Bool = true
+    let animationView = AnimationView()
+  
+    
     // MARK: - IBOutlets
     @IBOutlet var botScreenView: UIView!
     @IBOutlet var labelHumidity: UILabel!
@@ -27,6 +34,8 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var bubbleSize: NSLayoutConstraint!
     @IBOutlet var textBubbleSize: NSLayoutConstraint!
+    @IBOutlet var notifSwitch: UISwitch!
+    @IBOutlet var animationBGView: UIView!
     
 
     // MARK: - Life Cycle
@@ -43,12 +52,16 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
         queue: nil,
         using:catchNotification)
         
+        UNUserNotificationCenter.current().delegate = self
+        
         botScreenView.layer.cornerRadius = 30
         hauteurTextBubble.constant = -(sizeScreen.width * 0.08)
         bubbleSize.constant = -200
 //        textBubbleSize.constant = -200
         labelBubble.isHidden = true
         descriptionLabel.isHidden = true
+        
+        setupAnimation()
         
     }
     
@@ -60,6 +73,8 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
         })
         labelBubble.isHidden = false
         descriptionLabel.isHidden = false
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,9 +93,46 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
         guard let feel = notification.userInfo!["feel"] else { return }
         descriptionLabel.text = "Je suis actuellement à \(humidity)% d'humidité. Il est important que je ne reste pas désséchée..."
         labelBubble.text = "\(feel)"
+        let feels = ["Je suis rassasié 🥰", "Je me sens bien 😊", "Je me sens un peu sec 🙄",  "Qu'on m'apporte à boire !! 😵"]
+        if "\(feel)" == feels[3] && boolSwitchNotif == true {
+            sendNotification(body: feels[3])
+        }
+        
     
     }
     
+    func setupAnimation(){
+        animationView.animation = Animation.named("AnimationV2")
+        animationView.frame = view.bounds 
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationBGView.addSubview(animationView)
+        animationView.play()
+        
+    }
+    
+      func sendNotification(body: String) {
+
+              let content = UNMutableNotificationContent()
+              content.title = "Ma Plante"
+    //          content.subtitle = "from ioscreator.com"
+              content.body = "\(body)"
+              content.sound = UNNotificationSound.default
+             content.badge = 1
+              
+              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let requestIdentifier = "notif"
+            let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) { (error) in
+                //
+            }
+        }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+       completionHandler([.alert, .sound])
+       }
     
     // MARK: - IBActions
     @IBAction func backButton(_ sender: UIButton) {
@@ -90,7 +142,15 @@ class PlantController: UIViewController, UIAdaptivePresentationControllerDelegat
         }
     }
 
-
+    @IBAction func NotifSwitch(_ sender: UISwitch) {
+        if boolSwitchNotif == true {
+            boolSwitchNotif = false
+        } else {
+            boolSwitchNotif = true
+        }
+        
+    }
+    
     // MARK: - Navigation
 
 

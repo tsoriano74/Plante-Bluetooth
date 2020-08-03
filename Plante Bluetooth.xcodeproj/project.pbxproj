@@ -8,32 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		298D43A0CF025BEAB0996631 /* libPods-Plante Bluetooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 324735F14B5BAF7702F26F0C /* libPods-Plante Bluetooth.a */; };
+		75089D83243F321400FEF98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75089D82243F321400FEF98C /* Assets.xcassets */; };
 		7515560C243A1C5C00C3972D /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7515560B243A1C5C00C3972D /* PlantController.swift */; };
+		753EC35924D6C3A300879216 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EC35824D6C3A300879216 /* StartViewController.swift */; };
+		753EC35B24D6C79300879216 /* Plant Classifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 753EC35A24D6C79300879216 /* Plant Classifier 1.mlmodel */; };
+		753EC35D24D6DD5E00879216 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EC35C24D6DD5E00879216 /* DescriptionViewController.swift */; };
 		75965D652437647F002FD2E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D642437647F002FD2E1 /* AppDelegate.swift */; };
 		75965D672437647F002FD2E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D662437647F002FD2E1 /* SceneDelegate.swift */; };
 		75965D692437647F002FD2E1 /* ScanBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D682437647F002FD2E1 /* ScanBluetooth.swift */; };
 		75965D6C2437647F002FD2E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75965D6A2437647F002FD2E1 /* Main.storyboard */; };
-		75965D6E24376487002FD2E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75965D6D24376487002FD2E1 /* Assets.xcassets */; };
 		75965D7124376487002FD2E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75965D6F24376487002FD2E1 /* LaunchScreen.storyboard */; };
 		75965D7924376BF6002FD2E1 /* UUIDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D7824376BF6002FD2E1 /* UUIDKeys.swift */; };
 		75965D7B24376F9D002FD2E1 /* ScanBluetoothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D7A24376F9D002FD2E1 /* ScanBluetoothCell.swift */; };
+		75A1C5B124409AF400BC2C85 /* AnimationV2.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C5B024409AF400BC2C85 /* AnimationV2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		324735F14B5BAF7702F26F0C /* libPods-Plante Bluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Plante Bluetooth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4855752B2E758A515E004BB7 /* Pods-Plante Bluetooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plante Bluetooth.release.xcconfig"; path = "Target Support Files/Pods-Plante Bluetooth/Pods-Plante Bluetooth.release.xcconfig"; sourceTree = "<group>"; };
 		6C6D6122B7D88CA5B981BABA /* Pods-Plante Bluetooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plante Bluetooth.debug.xcconfig"; path = "Target Support Files/Pods-Plante Bluetooth/Pods-Plante Bluetooth.debug.xcconfig"; sourceTree = "<group>"; };
+		75089D82243F321400FEF98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7515560B243A1C5C00C3972D /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
-		75965D612437647F002FD2E1 /* Plante Bluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plante Bluetooth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		753EC35824D6C3A300879216 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		753EC35A24D6C79300879216 /* Plant Classifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Plant Classifier 1.mlmodel"; sourceTree = "<group>"; };
+		753EC35C24D6DD5E00879216 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		75965D612437647F002FD2E1 /* Plant Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75965D642437647F002FD2E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75965D662437647F002FD2E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		75965D682437647F002FD2E1 /* ScanBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBluetooth.swift; sourceTree = "<group>"; };
 		75965D6B2437647F002FD2E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		75965D6D24376487002FD2E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75965D7024376487002FD2E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75965D7224376487002FD2E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75965D7824376BF6002FD2E1 /* UUIDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKeys.swift; sourceTree = "<group>"; };
 		75965D7A24376F9D002FD2E1 /* ScanBluetoothCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBluetoothCell.swift; sourceTree = "<group>"; };
+		75A1C5B024409AF400BC2C85 /* AnimationV2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AnimationV2.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				75965D632437647F002FD2E1 /* Plante Bluetooth */,
+				75089D82243F321400FEF98C /* Assets.xcassets */,
 				75965D622437647F002FD2E1 /* Products */,
 				27E1D656219EE7C7C11C21A2 /* Pods */,
 				2C5A23FA435E7D8AE7ECD155 /* Frameworks */,
@@ -78,7 +87,7 @@
 		75965D622437647F002FD2E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75965D612437647F002FD2E1 /* Plante Bluetooth.app */,
+				75965D612437647F002FD2E1 /* Plant Connect.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,14 +95,17 @@
 		75965D632437647F002FD2E1 /* Plante Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				75A1C5B024409AF400BC2C85 /* AnimationV2.json */,
 				75965D642437647F002FD2E1 /* AppDelegate.swift */,
 				75965D662437647F002FD2E1 /* SceneDelegate.swift */,
 				75965D682437647F002FD2E1 /* ScanBluetooth.swift */,
 				75965D7824376BF6002FD2E1 /* UUIDKeys.swift */,
+				753EC35A24D6C79300879216 /* Plant Classifier 1.mlmodel */,
 				75965D6A2437647F002FD2E1 /* Main.storyboard */,
+				753EC35C24D6DD5E00879216 /* DescriptionViewController.swift */,
+				753EC35824D6C3A300879216 /* StartViewController.swift */,
 				7515560B243A1C5C00C3972D /* PlantController.swift */,
 				75965D7A24376F9D002FD2E1 /* ScanBluetoothCell.swift */,
-				75965D6D24376487002FD2E1 /* Assets.xcassets */,
 				75965D6F24376487002FD2E1 /* LaunchScreen.storyboard */,
 				75965D7224376487002FD2E1 /* Info.plist */,
 			);
@@ -118,7 +130,7 @@
 			);
 			name = "Plante Bluetooth";
 			productName = "Plante Bluetooth";
-			productReference = 75965D612437647F002FD2E1 /* Plante Bluetooth.app */;
+			productReference = 75965D612437647F002FD2E1 /* Plant Connect.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75965D7124376487002FD2E1 /* LaunchScreen.storyboard in Resources */,
-				75965D6E24376487002FD2E1 /* Assets.xcassets in Resources */,
+				75089D83243F321400FEF98C /* Assets.xcassets in Resources */,
+				75A1C5B124409AF400BC2C85 /* AnimationV2.json in Resources */,
 				75965D6C2437647F002FD2E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,11 +211,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				75965D7924376BF6002FD2E1 /* UUIDKeys.swift in Sources */,
+				753EC35924D6C3A300879216 /* StartViewController.swift in Sources */,
 				7515560C243A1C5C00C3972D /* PlantController.swift in Sources */,
 				75965D692437647F002FD2E1 /* ScanBluetooth.swift in Sources */,
 				75965D652437647F002FD2E1 /* AppDelegate.swift in Sources */,
 				75965D672437647F002FD2E1 /* SceneDelegate.swift in Sources */,
+				753EC35D24D6DD5E00879216 /* DescriptionViewController.swift in Sources */,
 				75965D7B24376F9D002FD2E1 /* ScanBluetoothCell.swift in Sources */,
+				753EC35B24D6C79300879216 /* Plant Classifier 1.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tsoriano.Plante-Bluetooth";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Plant Connect";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -374,7 +390,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tsoriano.Plante-Bluetooth";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Plant Connect";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

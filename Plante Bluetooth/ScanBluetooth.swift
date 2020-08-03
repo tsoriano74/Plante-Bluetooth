@@ -75,6 +75,7 @@ class ScanBluetooth: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     
+    
 
     
     @objc func refreshScan(){
@@ -119,23 +120,23 @@ class ScanBluetooth: UIViewController, UNUserNotificationCenterDelegate {
         return minDomain + (maxDomain - minDomain) * (value - minRange) / (maxRange - minRange)
     }
     
-    func sendNotification() {
-
-          let content = UNMutableNotificationContent()
-          content.title = "Notification Tutorial"
-          content.subtitle = "from ioscreator.com"
-          content.body = " Notification triggered"
-          content.sound = UNNotificationSound.default
-         content.badge = 1
-          
-          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let requestIdentifier = "notif"
-        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) { (error) in
-            //
-        }
-    }
+//    func sendNotification(body: String) {
+//
+//          let content = UNMutableNotificationContent()
+//          content.title = "Ma Plante"
+////          content.subtitle = "from ioscreator.com"
+//          content.body = "\(body)"
+//          content.sound = UNNotificationSound.default
+////         content.badge = 1
+//          
+//          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        let requestIdentifier = "notif"
+//        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+//        
+//        UNUserNotificationCenter.current().add(request) { (error) in
+//            //
+//        }
+//    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -247,14 +248,13 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
                       feel = "Je suis rassasié 🥰"
                   } else if convertedToPercent  > 30 && convertedToPercent <= 65 {
                       feel = "Je me sens bien 😊"
-                  } else if convertedToPercent > 10 && convertedToPercent <= 30 {
+                  } else if convertedToPercent > 6 && convertedToPercent <= 30 {
                       feel = "Je me sens un peu sec 🙄"
                   } else {
                       feel = "Qu'on m'apporte à boire !! 😵"
                   }
-                if convertedToPercent == 13 {
-                    sendNotification()
-                }
+               
+                
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil, userInfo: ["humidity": convertedToPercent, "feel":feel])
                 //NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: nil)
                 
@@ -314,7 +314,7 @@ extension ScanBluetooth: CBCentralManagerDelegate, CBPeripheralDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        sendNotification()
+        
         centralManager.connect(peripherals[indexPath.section], options: nil)
         
     }
