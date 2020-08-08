@@ -11,6 +11,7 @@ import CoreML
 import Vision
 import Alamofire
 import SwiftyJSON
+import Lottie
 
 class StartViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -21,9 +22,11 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     let imagePicker = UIImagePickerController()
     var userImage = UIImage()
     var plantResult = String()
+    let animationView = AnimationView()
 
   // MARK: - IBOutlets
     @IBOutlet var startActionOutlet: UIButton!
+    @IBOutlet var lottieView: UIView!
     
 
   // MARK: - Life Cycle
@@ -33,7 +36,12 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+        setupAnimation()
       }
+    
+    override func viewDidAppear(_ animated: Bool) {
+     
+    }
       
 
   // MARK: - Set Up
@@ -64,8 +72,8 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             if let firstResult = results.first {
                 self.plantResult = firstResult.identifier
-                print(firstResult.identifier)
-                self.requestInfo(plantName: firstResult.identifier)
+                print(firstResult.confidence)
+                //self.requestInfo(plantName: firstResult.identifier)
             }
         }
         
@@ -76,6 +84,15 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
             print(error)
         }
         
+    }
+    
+    private func setupAnimation(){
+        animationView.animation = Animation.named("lottiePlant")
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame = lottieView.bounds
+        animationView.loopMode = .loop
+        animationView.play()
+        lottieView.addSubview(animationView)
     }
 
   // MARK: - IBActions

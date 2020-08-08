@@ -31,11 +31,15 @@ class DescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        connectionButtonOutlet.layer.cornerRadius = 20
         plantImage.image = imageFromUser
         plantName.text = plantFound
+        plantDescription.text = plantInfos(PlantName: plantFound)
         
        
     }
+    
+    
     
     override func viewWillLayoutSubviews() {
         self.plantImage.layer.cornerRadius = self.plantImage.frame.size.width / 2;
@@ -44,7 +48,14 @@ class DescriptionViewController: UIViewController {
     }
 
     // MARK: - Set Up
-
+    private func plantInfos(PlantName: String) -> String {
+        if PlantName == "Dypsis lutescens"{
+            return "De la famille des Arecacées, jusqu'à une hauteur de 1,5 à 2,5m de hauteur, nécessite une bonne lumière. L'arrosage est nécessaire sous 2 à 3 jours, représentant un taux d'humidité de 30 %"
+        } else if PlantName == "Aloe vera" {
+            return "De la famille des Aloeacées, jusqu'à une hauteur de 0,5 à 1m de hauteur, nécessite une bonne lumière. L'arrosage est nécessaire 1 fois par semaine, représentant un taux d'humidité de 10 %"
+        }
+        return ""
+    }
 
     // MARK: - IBActions
     @IBAction func toConnectionPage(_ sender: UIButton) {

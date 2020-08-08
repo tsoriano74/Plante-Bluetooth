@@ -13,6 +13,7 @@
 		753EC35924D6C3A300879216 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EC35824D6C3A300879216 /* StartViewController.swift */; };
 		753EC35B24D6C79300879216 /* Plant Classifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 753EC35A24D6C79300879216 /* Plant Classifier 1.mlmodel */; };
 		753EC35D24D6DD5E00879216 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EC35C24D6DD5E00879216 /* DescriptionViewController.swift */; };
+		7565EE9E24DAA51F0040D8FD /* lottiePlant.json in Resources */ = {isa = PBXBuildFile; fileRef = 7565EE9D24DAA51F0040D8FD /* lottiePlant.json */; };
 		75965D652437647F002FD2E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D642437647F002FD2E1 /* AppDelegate.swift */; };
 		75965D672437647F002FD2E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D662437647F002FD2E1 /* SceneDelegate.swift */; };
 		75965D692437647F002FD2E1 /* ScanBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75965D682437647F002FD2E1 /* ScanBluetooth.swift */; };
@@ -32,6 +33,7 @@
 		753EC35824D6C3A300879216 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		753EC35A24D6C79300879216 /* Plant Classifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Plant Classifier 1.mlmodel"; sourceTree = "<group>"; };
 		753EC35C24D6DD5E00879216 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		7565EE9D24DAA51F0040D8FD /* lottiePlant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottiePlant.json; sourceTree = SOURCE_ROOT; };
 		75965D612437647F002FD2E1 /* Plant Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75965D642437647F002FD2E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75965D662437647F002FD2E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				753EC35A24D6C79300879216 /* Plant Classifier 1.mlmodel */,
 				75965D6A2437647F002FD2E1 /* Main.storyboard */,
 				753EC35C24D6DD5E00879216 /* DescriptionViewController.swift */,
+				7565EE9D24DAA51F0040D8FD /* lottiePlant.json */,
 				753EC35824D6C3A300879216 /* StartViewController.swift */,
 				7515560B243A1C5C00C3972D /* PlantController.swift */,
 				75965D7A24376F9D002FD2E1 /* ScanBluetoothCell.swift */,
@@ -175,6 +178,7 @@
 				75089D83243F321400FEF98C /* Assets.xcassets in Resources */,
 				75A1C5B124409AF400BC2C85 /* AnimationV2.json in Resources */,
 				75965D6C2437647F002FD2E1 /* Main.storyboard in Resources */,
+				7565EE9E24DAA51F0040D8FD /* lottiePlant.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

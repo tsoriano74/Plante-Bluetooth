@@ -16,28 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c57-HC-PBP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="627"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plante v2" translatesAutoresizingMaskIntoConstraints="NO" id="nPk-L9-JwW">
-                                        <rect key="frame" x="124" y="120" width="166" height="387"/>
-                                    </imageView>
-                                </subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="c57-HC-PBP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="nPk-L9-JwW" firstAttribute="centerY" secondItem="c57-HC-PBP" secondAttribute="centerY" id="Exu-Gk-pwg"/>
-                                    <constraint firstItem="nPk-L9-JwW" firstAttribute="centerX" secondItem="c57-HC-PBP" secondAttribute="centerX" id="Yqh-eq-cqy"/>
-                                    <constraint firstItem="nPk-L9-JwW" firstAttribute="width" secondItem="c57-HC-PBP" secondAttribute="width" multiplier="0.4" id="j0H-Cu-gTr"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tby-t6-Unm">
-                                <rect key="frame" x="0.0" y="671" width="414" height="191"/>
+                                <rect key="frame" x="0.0" y="492" width="414" height="370"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB4-1q-hYh">
-                                        <rect key="frame" x="134.5" y="0.0" width="145" height="57.5"/>
-                                        <color key="backgroundColor" name="BG Color Plant Screen"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="C'est partit !">
+                                        <rect key="frame" x="114" y="164.5" width="186" height="71"/>
+                                        <color key="backgroundColor" red="0.29057208350019564" green="0.66154152956998802" blue="0.66219538450241089" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NB4-1q-hYh" secondAttribute="height" multiplier="29:11" id="nVn-75-ZTm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <state key="normal" title="Scanner ma plante">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -48,9 +41,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="NB4-1q-hYh" firstAttribute="centerX" secondItem="Tby-t6-Unm" secondAttribute="centerX" id="0az-Pc-M8w"/>
-                                    <constraint firstItem="NB4-1q-hYh" firstAttribute="height" secondItem="Tby-t6-Unm" secondAttribute="height" multiplier="0.3" id="Tg3-2q-12Z"/>
-                                    <constraint firstItem="NB4-1q-hYh" firstAttribute="top" secondItem="Tby-t6-Unm" secondAttribute="top" id="VRQ-3B-LfY"/>
-                                    <constraint firstItem="NB4-1q-hYh" firstAttribute="width" secondItem="Tby-t6-Unm" secondAttribute="width" multiplier="0.35" id="sNJ-Qn-UQK"/>
+                                    <constraint firstItem="NB4-1q-hYh" firstAttribute="width" secondItem="Tby-t6-Unm" secondAttribute="width" multiplier="0.45" id="sNJ-Qn-UQK"/>
+                                    <constraint firstItem="NB4-1q-hYh" firstAttribute="centerY" secondItem="Tby-t6-Unm" secondAttribute="centerY" constant="15" id="xaD-Am-CJo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -61,13 +53,14 @@
                             <constraint firstItem="c57-HC-PBP" firstAttribute="top" secondItem="mSX-7u-1eu" secondAttribute="top" id="ILL-WB-8it"/>
                             <constraint firstItem="mSX-7u-1eu" firstAttribute="trailing" secondItem="Tby-t6-Unm" secondAttribute="trailing" id="PJx-1n-xPX"/>
                             <constraint firstItem="mSX-7u-1eu" firstAttribute="bottom" secondItem="Tby-t6-Unm" secondAttribute="bottom" id="W2q-ak-I0S"/>
-                            <constraint firstItem="c57-HC-PBP" firstAttribute="height" secondItem="U1E-85-fRk" secondAttribute="height" multiplier="0.7" id="ett-EB-7dB"/>
+                            <constraint firstItem="c57-HC-PBP" firstAttribute="height" secondItem="U1E-85-fRk" secondAttribute="height" multiplier="0.5" id="ett-EB-7dB"/>
                             <constraint firstItem="mSX-7u-1eu" firstAttribute="trailing" secondItem="c57-HC-PBP" secondAttribute="trailing" id="kXw-qP-m2m"/>
                             <constraint firstItem="c57-HC-PBP" firstAttribute="leading" secondItem="mSX-7u-1eu" secondAttribute="leading" id="uoD-2r-qAd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mSX-7u-1eu"/>
                     </view>
                     <connections>
+                        <outlet property="lottieView" destination="c57-HC-PBP" id="UpT-P2-rvL"/>
                         <outlet property="startActionOutlet" destination="NB4-1q-hYh" id="9uE-Re-7FS"/>
                         <segue destination="yDB-EO-uWP" kind="show" identifier="toPlantResults" id="QP6-ev-Mgc"/>
                     </connections>
@@ -118,12 +111,12 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6e-kf-3AW" userLabel="DescView">
-                                <rect key="frame" x="0.0" y="505" width="414" height="168.5"/>
+                                <rect key="frame" x="0.0" y="505" width="414" height="126.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COJ-Af-M9I">
-                                        <rect key="frame" x="187.5" y="74" width="39.5" height="21"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                        <color key="textColor" name="Blue text"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COJ-Af-M9I">
+                                        <rect key="frame" x="41.5" y="0.0" width="331" height="126.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -131,40 +124,35 @@
                                 <constraints>
                                     <constraint firstItem="COJ-Af-M9I" firstAttribute="centerX" secondItem="b6e-kf-3AW" secondAttribute="centerX" id="1vR-gU-J8l"/>
                                     <constraint firstItem="COJ-Af-M9I" firstAttribute="centerY" secondItem="b6e-kf-3AW" secondAttribute="centerY" id="7gs-Y9-Ma8"/>
+                                    <constraint firstItem="COJ-Af-M9I" firstAttribute="height" secondItem="b6e-kf-3AW" secondAttribute="height" id="BZ4-j3-Lwe"/>
+                                    <constraint firstItem="COJ-Af-M9I" firstAttribute="width" secondItem="b6e-kf-3AW" secondAttribute="width" multiplier="0.8" id="IoQ-jG-0vE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHI-SL-su3" userLabel="ButtonView">
-                                <rect key="frame" x="0.0" y="673.5" width="414" height="134.5"/>
+                                <rect key="frame" x="0.0" y="631.5" width="414" height="176.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-ae-kN9">
-                                        <rect key="frame" x="145" y="0.0" width="124" height="54"/>
-                                        <color key="backgroundColor" name="BG Color Plant Screen"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Se connecter">
+                                        <rect key="frame" x="114" y="53" width="186" height="70.5"/>
+                                        <color key="backgroundColor" red="0.29057208350000002" green="0.66154152960000001" blue="0.66219538450000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PV2-ae-kN9" secondAttribute="height" multiplier="29:11" id="QXG-jk-vrl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <state key="normal" title="Connecter ma plante">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="startAction:" destination="vTs-NL-B2g" eventType="touchUpInside" id="KFU-6o-asE"/>
                                             <action selector="toConnectionPage:" destination="yDB-EO-uWP" eventType="touchUpInside" id="Wkb-G7-b4U"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBS-L7-5mN">
-                                        <rect key="frame" x="169" y="64" width="76" height="28"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
-                                        <state key="normal" title="Recommencer"/>
-                                        <connections>
-                                            <action selector="restartCapture:" destination="yDB-EO-uWP" eventType="touchUpInside" id="Icy-Kw-YdO"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="5LD-Ub-Ir8"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="PV2-ae-kN9" firstAttribute="top" secondItem="hHI-SL-su3" secondAttribute="top" id="76F-fI-ZIP"/>
-                                    <constraint firstItem="PV2-ae-kN9" firstAttribute="width" secondItem="hHI-SL-su3" secondAttribute="width" multiplier="0.3" id="8Xw-Vc-aGl"/>
+                                    <constraint firstItem="PV2-ae-kN9" firstAttribute="width" secondItem="hHI-SL-su3" secondAttribute="width" multiplier="0.45" id="8Xw-Vc-aGl"/>
                                     <constraint firstItem="PV2-ae-kN9" firstAttribute="centerX" secondItem="hHI-SL-su3" secondAttribute="centerX" id="BhL-aF-nur"/>
-                                    <constraint firstItem="mBS-L7-5mN" firstAttribute="top" secondItem="PV2-ae-kN9" secondAttribute="bottom" constant="10" id="Yp6-3f-atk"/>
-                                    <constraint firstItem="mBS-L7-5mN" firstAttribute="centerX" secondItem="hHI-SL-su3" secondAttribute="centerX" id="foZ-c6-HhZ"/>
-                                    <constraint firstItem="PV2-ae-kN9" firstAttribute="height" secondItem="hHI-SL-su3" secondAttribute="height" multiplier="0.4" id="qsx-oH-CHd"/>
+                                    <constraint firstItem="PV2-ae-kN9" firstAttribute="centerY" secondItem="hHI-SL-su3" secondAttribute="centerY" id="G4r-0X-NIy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -182,7 +170,7 @@
                             <constraint firstItem="hHI-SL-su3" firstAttribute="bottom" secondItem="bzO-cQ-duN" secondAttribute="bottom" id="ZED-8M-dZu"/>
                             <constraint firstItem="hHI-SL-su3" firstAttribute="leading" secondItem="bzO-cQ-duN" secondAttribute="leading" id="fAm-bQ-nw3"/>
                             <constraint firstItem="Gfc-uq-fDc" firstAttribute="top" secondItem="zmh-Gu-tnH" secondAttribute="bottom" id="fQd-FT-gY7"/>
-                            <constraint firstItem="b6e-kf-3AW" firstAttribute="height" secondItem="8od-JD-ILg" secondAttribute="height" multiplier="0.2" id="k4z-wd-aKs"/>
+                            <constraint firstItem="b6e-kf-3AW" firstAttribute="height" secondItem="8od-JD-ILg" secondAttribute="height" multiplier="0.15" id="k4z-wd-aKs"/>
                             <constraint firstItem="b6e-kf-3AW" firstAttribute="leading" secondItem="bzO-cQ-duN" secondAttribute="leading" id="kX7-ee-he9"/>
                             <constraint firstItem="b6e-kf-3AW" firstAttribute="top" secondItem="Gfc-uq-fDc" secondAttribute="bottom" id="oFg-m6-md8"/>
                             <constraint firstItem="zmh-Gu-tnH" firstAttribute="top" secondItem="bzO-cQ-duN" secondAttribute="top" id="ogK-c3-OTo"/>
@@ -196,7 +184,6 @@
                         <outlet property="plantDescription" destination="COJ-Af-M9I" id="q5U-Gk-z5p"/>
                         <outlet property="plantImage" destination="4i1-XS-294" id="9ig-bC-lLU"/>
                         <outlet property="plantName" destination="uoE-qr-hIC" id="Fzq-Y6-M4h"/>
-                        <outlet property="restartButtonOutlet" destination="mBS-L7-5mN" id="W36-39-Pt9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbd-DL-46S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -208,26 +195,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ScanBluetooth" customModule="Plant_Connect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pH-nF-6v5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="210.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top" translatesAutoresizingMaskIntoConstraints="NO" id="NCj-Ir-kOx">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="210.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="-80" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jP-dh-ZxX">
-                                        <rect key="frame" x="52" y="0.0" width="310.5" height="224"/>
+                                        <rect key="frame" x="52" y="0.0" width="310.5" height="210.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecte ta Plante !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGP-LT-R5b">
-                                                <rect key="frame" x="0.0" y="0.0" width="211.5" height="161.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211.5" height="154.5"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qui vient de planter un arbre, doit apprendre à patienter avant d'en recueillir les fruits" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5p-9b-66H">
-                                                <rect key="frame" x="0.0" y="63" width="310.5" height="161"/>
+                                                <rect key="frame" x="0.0" y="56" width="310.5" height="154.5"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -251,10 +238,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnf-qz-rsi">
-                                <rect key="frame" x="0.0" y="224" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="210.5" width="414" height="631.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nw4-WD-odf">
-                                        <rect key="frame" x="31" y="0.0" width="352" height="672"/>
+                                        <rect key="frame" x="31" y="0.0" width="352" height="631.5"/>
                                         <color key="backgroundColor" name="TableColor"/>
                                         <color key="separatorColor" name="TableColor"/>
                                         <color key="sectionIndexBackgroundColor" name="TableColor"/>
@@ -351,6 +338,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OJ5-4a-Q7E"/>
                     <connections>
                         <outlet property="ScanTableView" destination="nw4-WD-odf" id="qs7-wV-VsT"/>
                         <segue destination="tSj-hS-ABt" kind="show" identifier="toPlant" id="uOl-af-et3"/>
